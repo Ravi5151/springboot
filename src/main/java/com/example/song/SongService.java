@@ -68,6 +68,7 @@ public class SongService implements SongRepository {
         }
          
         return currentSong;
+        
 
     }
 
@@ -79,6 +80,7 @@ public class SongService implements SongRepository {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND);
         }else{
             playlist.remove(songId);
+            uniqueId -= 1;
             throw new ResponseStatusException(HttpStatus.NO_CONTENT);
         }
     }
